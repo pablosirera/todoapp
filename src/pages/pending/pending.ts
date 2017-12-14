@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { WishListService } from '../../app/services/wish-list.service';
+
 
 @Component({
   selector: 'page-pending',
@@ -7,7 +9,6 @@ import { NavController } from 'ionic-angular';
 })
 export class PendingPage {
 
-  constructor(public navCtrl: NavController) {
-  }
+  constructor(public navCtrl: NavController, private _wishList: WishListService) {}
 
 }
