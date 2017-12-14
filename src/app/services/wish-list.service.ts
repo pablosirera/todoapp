@@ -7,14 +7,22 @@ export class WishListService {
   lists: List[] = [];
 
   constructor() {
-    let list1 = new List( 'Compras de supermercado' );
-    let list2 = new List( 'Juegos deseados' );
-    let list3 = new List( 'Cosas de la universidad' );
+    this.getDataFromLocalStorage();
+  }
 
-    this.lists.push(list1);
-    this.lists.push(list2);
-    this.lists.push(list3);
+  setDataOnLocalStorage() {
+    localStorage.setItem('data', JSON.stringify(this.lists));
+  }
 
-    console.log('Service WishListService');
+  getDataFromLocalStorage() {
+    const dataLocalStorage = localStorage.getItem('data');
+    if ( dataLocalStorage ) {
+      this.lists = JSON.parse(dataLocalStorage);
+    }
+  }
+
+  addList( list: List) {
+    this.lists.push(list);
+    this.setDataOnLocalStorage()
   }
 }
