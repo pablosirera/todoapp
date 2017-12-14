@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PendingPage } from '../pages/pending/pending';
 import { FinishedPage } from '../pages/finished/finished';
 import { AddPage } from '../pages/add/add';
+import { DetailListPage } from '../pages/detail-list/detail-list';
+
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PendingPage,
     FinishedPage,
     AddPage,
+    DetailListPage,
     TabsPage
   ],
   imports: [
@@ -34,6 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PendingPage,
     FinishedPage,
     AddPage,
+    DetailListPage,
     TabsPage
   ],
   providers: [

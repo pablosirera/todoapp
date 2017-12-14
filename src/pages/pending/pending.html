@@ -9,23 +9,22 @@
 
 <ion-content padding>
   <ion-card *ngFor="let list of _wishList.lists; let i = index">
-    <!-- <ion-item>
-      <button ion-button color="light" round>Light Round</button>
-    </ion-item> -->
+    <ion-item color="dark" (click)="seeDetails(list, i)">
+      <h2>{{ list.name }}</h2>
+      <ion-note item-right>
+        {{ list.items.length }} items
+      </ion-note>
+    </ion-item>
 
-    <ion-card-header>{{ list.name }}</ion-card-header>
     <ion-list>
-      <ion-item>
-        <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
-        {{ i }}
+      <ion-item *ngFor="let item of list.items | slice:0:2" (click)="seeDetails(list, i)">
+        <ion-icon *ngIf="!item.complete" ios="ios-square-outline" md="md-square-outline"></ion-icon>
+        <ion-icon *ngIf="item.complete" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+        {{ item.name }}
       </ion-item>
-      <ion-item>
-        <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
-        {{ i }}
-      </ion-item>
-      <ion-item>
-        <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
-        {{ i }}
+
+      <ion-item text-center *ngIf="list.items.length > 2">
+        <ion-icon color="primary" ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
       </ion-item>
     </ion-list>
   </ion-card>
