@@ -25,4 +25,8 @@ export class AddPage {
     this.nameItem = "";
   }
 
+  removeItem(index: number) {
+    this.items.splice(index, 1);
+  }
+
 }
