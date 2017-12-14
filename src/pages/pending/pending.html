@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Lista de Pendientes</ion-title>
   </ion-navbar>
 
@@ -8,9 +8,31 @@
 
 
 <ion-content padding>
-  <ul>
-    <li *ngFor="let list of _wishList.lists">
-      {{ list.name }}
-    </li>
-  </ul>
+  <ion-card *ngFor="let list of _wishList.lists; let i = index">
+    <ion-item>
+      <button ion-button color="light" round>Light Round</button>
+    </ion-item>
+
+    <h2>{{ list.name }}</h2>
+    <ion-list>
+      <ion-item>
+        <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+        {{ i }}
+      </ion-item>
+      <ion-item>
+        <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+        {{ i }}
+      </ion-item>
+      <ion-item>
+        <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+        {{ i }}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab color="primary">
+      <ion-icon ios="ios-add" md="md-add"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
