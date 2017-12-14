@@ -10,6 +10,8 @@ import { WishListService } from './services/wish-list.service';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PendingPage } from '../pages/pending/pending';
 import { FinishedPage } from '../pages/finished/finished';
+import { AddPage } from '../pages/add/add';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     PendingPage,
     FinishedPage,
+    AddPage,
     TabsPage
   ],
   imports: [
@@ -30,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     PendingPage,
     FinishedPage,
+    AddPage,
     TabsPage
   ],
   providers: [
