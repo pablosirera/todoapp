@@ -9,11 +9,11 @@
 
 <ion-content padding>
   <ion-card *ngFor="let list of _wishList.lists; let i = index">
-    <ion-item>
+    <!-- <ion-item>
       <button ion-button color="light" round>Light Round</button>
-    </ion-item>
+    </ion-item> -->
 
-    <h2>{{ list.name }}</h2>
+    <ion-card-header>{{ list.name }}</ion-card-header>
     <ion-list>
       <ion-item>
         <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
