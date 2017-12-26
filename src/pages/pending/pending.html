@@ -8,7 +8,15 @@
 
 
 <ion-content padding>
-  <ion-card *ngFor="let list of _wishList.lists; let i = index">
+  <ion-grid *ngIf="(_wishList.lists | pendingPipe).length === 0">
+    <ion-row>
+      <ion-col text-center class="empty-box">
+        <ion-icon ios="ios-sunny" md="md-sunny"></ion-icon>
+        <p>No hay ninguna lista</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card *ngFor="let list of _wishList.lists | pendingPipe; let i = index">
     <ion-item color="dark" (click)="seeDetails(list, i)">
       <h2>{{ list.name }}</h2>
       <ion-note item-right>
@@ -18,9 +26,9 @@
 
     <ion-list>
       <ion-item *ngFor="let item of list.items | slice:0:2" (click)="seeDetails(list, i)">
-        <ion-icon *ngIf="!item.complete" ios="ios-square-outline" md="md-square-outline"></ion-icon>
-        <ion-icon *ngIf="item.complete" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
-        {{ item.name }}
+        <ion-icon item-left *ngIf="!item.complete" ios="ios-square-outline" md="md-square-outline"></ion-icon>
+        <ion-icon item-left *ngIf="item.complete" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+        <h2 [class.item-complete]="item.complete">{{ item.name }}</h2>
       </ion-item>
 
       <ion-item text-center *ngIf="list.items.length > 2">

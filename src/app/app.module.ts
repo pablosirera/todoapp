@@ -6,14 +6,14 @@ import { MyApp } from './app.component';
 // service
 import { WishListService } from './services/wish-list.service';
 
+// pipes
+import { PipesModule } from "../pipes/pipes.module";
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { PendingPage } from '../pages/pending/pending';
 import { FinishedPage } from '../pages/finished/finished';
 import { AddPage } from '../pages/add/add';
 import { DetailListPage } from '../pages/detail-list/detail-list';
-
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    PipesModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

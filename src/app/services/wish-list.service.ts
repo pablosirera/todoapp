@@ -25,4 +25,9 @@ export class WishListService {
     this.lists.push(list);
     this.setDataOnLocalStorage()
   }
+
+  removeList(idx: number) {
+    this.lists.splice(idx, 1);
+    this.setDataOnLocalStorage();
+  }
 }

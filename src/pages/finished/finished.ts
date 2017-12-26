@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FinishedPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { WishListService } from "../../app/services/wish-list.service";
+import { DetailListPage } from '../detail-list/detail-list';
 
 @Component({
   selector: 'page-finished',
@@ -14,11 +9,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FinishedPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public _wishList: WishListService) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FinishedPage');
+  seeDetails(list: any, index: number) {
+    this.navCtrl.push(DetailListPage, {list, index});
   }
 
 }
