@@ -1,13 +1,13 @@
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="light">
     <ion-title>Lista de Pendientes</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-grid *ngIf="(_wishList.lists | pendingPipe).length === 0">
     <ion-row>
       <ion-col text-center class="empty-box">
@@ -16,7 +16,23 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-card *ngFor="let list of _wishList.lists | pendingPipe; let i = index">
+
+  <ion-list no-lines>
+    <ion-item (click)="seeDetails(list, i)">
+      <ion-icon ios="ios-folder-open" md="md-folder-open" item-start></ion-icon>
+      <button ion-item>
+        Bandeja de entrada
+      </button>
+    </ion-item>
+    <ion-item *ngFor="let list of _wishList.lists | pendingPipe; let i = index" (click)="seeDetails(list, i)">
+      <ion-icon ios="ios-clipboard" md="md-clipboard" item-start></ion-icon>
+      <button ion-item >
+        {{ list.name | capitalize }}
+      </button> 
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-card *ngFor="let list of _wishList.lists | pendingPipe; let i = index">
     <ion-item color="dark" (click)="seeDetails(list, i)">
       <h2>{{ list.name }}</h2>
       <ion-note item-right>
@@ -35,10 +51,10 @@
         <ion-icon color="primary" ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
       </ion-item>
     </ion-list>
-  </ion-card>
+  </ion-card> -->
 
   <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="goToAdd()">
+    <button ion-fab color="dark" (click)="goToAdd()">
       <ion-icon ios="ios-add" md="md-add"></ion-icon>
     </button>
   </ion-fab>

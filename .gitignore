@@ -25,6 +25,8 @@ temp/
 plugins/android.json
 plugins/ios.json
 www/
+platforms/
+plugins/
 $RECYCLE.BIN/
 
 package-lock.json

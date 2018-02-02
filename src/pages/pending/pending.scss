@@ -9,4 +9,10 @@ page-pending {
       font-size: 100px;
     }
   }
+  ion-list {
+    ion-item {
+      height: 30px;
+      min-height: unset;
+    }
+  }
 }
