@@ -1,11 +1,17 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>{{ list.name }}</ion-title>
-  </ion-navbar>
+  <main-header [textTitle]="list.name"></main-header>
 </ion-header>
 
 
 <ion-content>
+  <form (ngSubmit)="saveItems()" novalidate [formGroup]="form">
+    <ion-item>
+      <ion-input
+        type="text"
+        placeholder="Agregar tarea..."
+        formControlName="task"></ion-input>
+    </ion-item>
+  </form>
   <ion-list>
     <ion-item *ngFor="let item of list.items" (click)="completeItem(item)">
       <ion-icon item-left *ngIf="!item.complete" ios="ios-square-outline" md="md-square-outline"></ion-icon>

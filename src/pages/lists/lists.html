@@ -1,0 +1,16 @@
+<ion-header>
+  <main-header></main-header>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-item *ngFor="let list of _wishList.lists" (click)="seeDetails(list, i)">
+      <ion-icon ios="ios-clipboard" md="md-clipboard" item-start></ion-icon>
+      <button ion-item >
+        {{ list.name | capitalize }}
+      </button> 
+    </ion-item>
+  </ion-list>
+
+  <button-add (onClickButton)="goToAdd()"></button-add>
+</ion-content>

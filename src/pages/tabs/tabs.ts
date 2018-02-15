@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { PendingPage } from '../pending/pending';
+import { ListsPage } from '../lists/lists';
 import { FinishedPage } from '../finished/finished';
 
 @Component({
@@ -8,7 +8,7 @@ import { FinishedPage } from '../finished/finished';
 })
 export class TabsPage {
 
-  tab1Root: any = PendingPage;
+  tab1Root: any = ListsPage;
   tab2Root: any = FinishedPage;
 
   constructor() {

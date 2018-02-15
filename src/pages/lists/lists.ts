@@ -6,10 +6,10 @@ import { DetailListPage } from '../detail-list/detail-list';
 
 
 @Component({
-  selector: 'page-pending',
-  templateUrl: 'pending.html',
+  selector: 'page-lists',
+  templateUrl: 'lists.html',
 })
-export class PendingPage {
+export class ListsPage {
 
   constructor(public navCtrl: NavController, private _wishList: WishListService) {}
 

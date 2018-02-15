@@ -9,8 +9,12 @@ import { WishListService } from './services/wish-list.service';
 // pipes
 import { PipesModule } from "../pipes/pipes.module";
 
+// components
+import { MainHeaderComponent } from "../components/main-header/main-header";
+import { ButtonAddComponent } from "../components/button-add/button-add";
+
 import { TabsPage } from '../pages/tabs/tabs';
-import { PendingPage } from '../pages/pending/pending';
+import { ListsPage } from '../pages/lists/lists';
 import { FinishedPage } from '../pages/finished/finished';
 import { AddPage } from '../pages/add/add';
 import { DetailListPage } from '../pages/detail-list/detail-list';
@@ -21,11 +25,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    PendingPage,
+    ListsPage,
     FinishedPage,
     AddPage,
     DetailListPage,
-    TabsPage
+    MainHeaderComponent,
+    ButtonAddComponent,
+    TabsPage,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PendingPage,
+    ListsPage,
     FinishedPage,
     AddPage,
     DetailListPage,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from "@angular/forms";
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { List, ListItem } from '../../app/classes/classes';
 import { WishListService } from '../../app/services/wish-list.service';
@@ -8,9 +9,11 @@ import { WishListService } from '../../app/services/wish-list.service';
   templateUrl: 'detail-list.html',
 })
 export class DetailListPage {
-
+  form:FormGroup;
   idx:number;
   list:any;
+  nameItem: string;
+  items: ListItem[] = [];
 
   constructor(
     public navCtrl: NavController,
@@ -20,6 +23,12 @@ export class DetailListPage {
   ) {
     this.idx = this.navParams.get('index');
     this.list = this.navParams.get('list');
+    this.items = this.list.items;
+    this.initForm();
+  }
+
+  initForm() {
+    this.form = new FormGroup({'task': new FormControl('', [])});
   }
 
   completeItem(item: ListItem) {
@@ -33,6 +42,22 @@ export class DetailListPage {
       }
     }
     this.list.finished = allChecked;
+    this._wishList.setDataOnLocalStorage();
+  }
+
+  saveItems() {
+    const valueTask = this.form.controls['task'].value;
+    if (!valueTask) return;
+    let item = new ListItem();
+    item.name = valueTask;
+
+    this.addItemsOnList(item);
+    this.form.reset();
+  }
+
+  addItemsOnList(item: ListItem) {
+    this.items.push(item);
+    if (this.list.items === undefined) this.list.items = this.items;
     this._wishList.setDataOnLocalStorage();
   }
 

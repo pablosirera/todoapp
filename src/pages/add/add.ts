@@ -4,7 +4,6 @@ import { List, ListItem } from '../../app/classes/classes';
 
 import { WishListService } from '../../app/services/wish-list.service';
 
-
 @Component({
   selector: 'page-add',
   templateUrl: 'add.html',
