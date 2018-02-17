@@ -1,13 +1,13 @@
 <ion-header>
-  <main-header></main-header>
+  <main-header textTitle="Tareas Terminadas"></main-header>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-grid *ngIf="(_wishList.lists | finishedPipe).length === 0">
     <ion-row>
       <ion-col text-center class="empty-box">
         <ion-icon ios="ios-sunny" md="md-sunny"></ion-icon>
-        <p>No hay ninguna lista</p>
+        <p>No hay ninguna tarea completada</p>
       </ion-col>
     </ion-row>
   </ion-grid>

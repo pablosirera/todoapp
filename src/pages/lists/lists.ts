@@ -10,12 +10,14 @@ import { ModalCreateListPage } from '../modal-create-list/modal-create-list';
   templateUrl: 'lists.html',
 })
 export class ListsPage {
-
+  lists: any;
   constructor(
     public navCtrl: NavController,
     private _wishList: WishListService,
     private modalCtrl: ModalController
-  ) {}
+  ) {
+    this.lists = this._wishList.lists;
+  }
 
   openModal() {
     let modal = this.modalCtrl.create(ModalCreateListPage);

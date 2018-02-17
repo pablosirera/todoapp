@@ -13,6 +13,7 @@ import { PipesModule } from "../pipes/pipes.module";
 import { MainHeaderComponent } from "../components/main-header/main-header";
 import { ButtonAddComponent } from "../components/button-add/button-add";
 
+// pages
 import { TabsPage } from '../pages/tabs/tabs';
 import { ListsPage } from '../pages/lists/lists';
 import { FinishedPage } from '../pages/finished/finished';

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from "@angular/forms";
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import { List, ListItem } from '../../app/classes/classes';
+import { ListItem } from '../../app/classes/classes';
 import { WishListService } from '../../app/services/wish-list.service';
 
 @Component({

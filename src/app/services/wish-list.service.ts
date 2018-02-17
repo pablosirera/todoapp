@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { List } from '../classes/lists';
-import { ListItem } from '../classes/classes';
 
 
 @Injectable()
