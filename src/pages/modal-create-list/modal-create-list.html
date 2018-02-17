@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Crear Lista
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()" class="close-modal">
+        <span ion-text color="dark">
+          <ion-icon ios="ios-close-circle" md="md-close-circle"></ion-icon>
+        </span>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="saveList()">
+        <span ion-text color="dark">OK</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="nameList" name="nameList" (keyup.enter)="saveList()"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -16,8 +16,8 @@ import { ButtonAddComponent } from "../components/button-add/button-add";
 import { TabsPage } from '../pages/tabs/tabs';
 import { ListsPage } from '../pages/lists/lists';
 import { FinishedPage } from '../pages/finished/finished';
-import { AddPage } from '../pages/add/add';
 import { DetailListPage } from '../pages/detail-list/detail-list';
+import { ModalCreateListPage } from '../pages/modal-create-list/modal-create-list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,10 +27,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     ListsPage,
     FinishedPage,
-    AddPage,
     DetailListPage,
     MainHeaderComponent,
     ButtonAddComponent,
+    ModalCreateListPage,
     TabsPage,
   ],
   imports: [
@@ -43,8 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     ListsPage,
     FinishedPage,
-    AddPage,
     DetailListPage,
+    ModalCreateListPage,
     TabsPage
   ],
   providers: [

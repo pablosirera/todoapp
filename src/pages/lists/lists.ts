@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { WishListService } from '../../app/services/wish-list.service';
-import { AddPage } from '../add/add';
 import { DetailListPage } from '../detail-list/detail-list';
+import { ModalCreateListPage } from '../modal-create-list/modal-create-list';
 
 
 @Component({
@@ -11,10 +11,16 @@ import { DetailListPage } from '../detail-list/detail-list';
 })
 export class ListsPage {
 
-  constructor(public navCtrl: NavController, private _wishList: WishListService) {}
+  constructor(
+    public navCtrl: NavController,
+    private _wishList: WishListService,
+    private modalCtrl: ModalController
+  ) {}
 
-  goToAdd() {
-    this.navCtrl.push(AddPage);
+  openModal() {
+    let modal = this.modalCtrl.create(ModalCreateListPage);
+    modal.present();
+    // this.navCtrl.push(AddPage);
   }
 
   seeDetails(list: any, index: number) {
