@@ -1,9 +1,11 @@
 <ion-header>
-  <main-header textTitle="Tareas Terminadas"></main-header>
+  <ion-navbar>
+    <main-header textTitle="Tareas Terminadas"></main-header>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid *ngIf="(_wishList.lists | finishedPipe).length === 0">
+  <ion-grid *ngIf="(lists | finishedPipe).length === 0">
     <ion-row>
       <ion-col text-center class="empty-box">
         <ion-icon ios="ios-sunny" md="md-sunny"></ion-icon>

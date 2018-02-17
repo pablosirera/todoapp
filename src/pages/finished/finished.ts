@@ -8,11 +8,15 @@ import { DetailListPage } from '../detail-list/detail-list';
   templateUrl: 'finished.html',
 })
 export class FinishedPage {
+  lists: any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public _wishList: WishListService) {}
+    public _wishList: WishListService
+  ) {
+      this.lists = this._wishList.lists;
+    }
 
   seeDetails(list: any, index: number) {
     this.navCtrl.push(DetailListPage, {list, index});
